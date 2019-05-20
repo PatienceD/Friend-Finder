@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Servey Questions!</h2>
+        <hr class="my-4">
+        <div class="form-group">
+            <h3>About You</h3>
+            <label for="exampleFormControlInput1">Name (required)</label>
+            <input type="text" class="form-control" id="name" placeholder="John Smith">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Link to photo image (required)</label>
+            <input type="text" class="form-control" id="photo">
+        </div>
+        <hr class="my-4">
+
+        <h3>Please Answer the Questions Below</h3>
+
+
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">#1 I feel sympathy for those who are worse off than
+                    myself.</label>
+                <select class="form-control" id="q1">
+                    <option>1 (strongly disagree)</option>
+                    <option>2 (somewhat disagree)</option>
+                    <option>3 (neutral)</option>
+                    <option>4 (somewhat agree)</option>
+                    <option>5 (strongly agree)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">#2 I see beauty in things that others might not
+                    notice.</label>
+                <select class="form-control" id="q2">
+                    <option>1 (strongly disagree)</option>
+                    <option>2 (somewhat disagree)</option>
+                    <option>3 (neutral)</option>
+                    <option>4 (somewhat agree)</option>
+                    <option>5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">#3 I love to help others.</label>
+                <select class="form-control" id="q3">
+                    <option>1 (strongly disagree)</option>
+                    <option>2 (somewhat disagree)</option>
+                    <option>3 (neutral)</option>
+                    <option>4 (somewhat agree)</option>
+                    <option>5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">#4 I want everything to be "just right."</label>
+                <select class="form-control" id="q4">
+                    <option>1 (strongly disagree)</option>
+                    <option>2 (somewhat disagree)</option>
+                    <option>3 (neutral)</option>
+                    <option>4 (somewhat agree)</option>
+                    <option>5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">#5 I believe in the importance of art.</label>
+                <select class="form-control" id="q5">
+                    <option>1 (strongly disagree)</option>
+                    <option>2 (somewhat disagree)</option>
+                    <option>3 (neutral)</option>
+                    <option>4 (somewhat agree)</option>
+                    <option>5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">#6 I experience my emotions intensely.</label>
+                <select class="form-control" id="q6">
+                    <option>1 (strongly disagree)</option>
+                    <option>2 (somewhat disagree)</option>
+                    <option>3 (neutral)</option>
+                    <option>4 (somewhat agree)</option>
+                    <option>5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">#7 I like to solve complex problems.</label>
+                <select class="form-control" id="q7">
+                    <option>1 (strongly disagree)</option>
+                    <option>2 (somewhat disagree)</option>
+                    <option>3 (neutral)</option>
+                    <option>4 (somewhat agree)</option>
+                    <option>5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">#8 I talk to a lot of different people at
+                    parties.</label>
+                <select class="form-control" id="q8">
+                    <option>1 (strongly disagree)</option>
+                    <option>2 (somewhat disagree)</option>
+                    <option>3 (neutral)</option>
+                    <option>4 (somewhat agree)</option>
+                    <option>5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">#9 I believe that there is no absolute right and
+                    wrong.</label>
+                <select class="form-control" id="q9">
+                    <option>1 (strongly disagree)</option>
+                    <option>2 (somewhat disagree)</option>
+                    <option>3 (neutral)</option>
+                    <option>4 (somewhat agree)</option>
+                    <option>5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">#10 I believe that others have good intentions.</label>
+                <select class="form-control" id="q10">
+                    <option>1 (strongly disagree)</option>
+                    <option>2 (somewhat disagree)</option>
+                    <option>3 (neutral)</option>
+                    <option>4 (somewhat agree)</option>
+                    <option>5 (strongly agree)</option>
+                </select>
+            </div>
+        </form><br>
+        <button type="button" class="btn btn-dark btn-lg btn-block" id="submit-button"><i class="fas fa-check"></i>
+            Submit</button>
+        <br>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+
+        </div>
+        <div class="footer">
+            <a href="#">API Friends List</a> | <a href="#">GitHub Repo</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
