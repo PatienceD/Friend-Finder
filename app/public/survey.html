@@ -6,7 +6,7 @@
     <title>Friend Finder</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 
@@ -14,9 +14,7 @@
 
 <body>
     <div class="container">
-        <h2>Servey Questions!<a class="btn btn-light btn-lg" href="./home.html" role="button" style="float: right"><i
-                    class="fas fa-home"></i></a>
-        </h2>
+        <h2>Servey Questions!</h2>
         <hr class="my-4">
         <div class="form-group">
             <h3>About You</h3>
@@ -166,69 +164,17 @@
         </div>
         <div class="footer">
             <a href="#">API Friends List</a> | <a href="#">GitHub Repo</a>
-            <a class="btn btn-light btn-lg" href="./home.html" role="button" style="float: right"><i
+            <a class="btn btn-light btn-lg" href="./home" role="button" style="float: right"><i
                     class="fas fa-home"></i></a>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    <script src="./servey_js.js"></script>
+
 </body>
-<script>
-    //capture on clicks
-    $("#submit-button").on("click", function (event) {
-        event.preventDefault();
-
-        //validating form
-        function formValidate() {
-            let valid = true;
-            $(".form-input").each(function () {
-                if ($(this).val() === " ") {
-                    valid = false;
-                }
-            });
-            $(".question-choice").each(function () {
-                if ($(this).val() === " ") {
-                    valid = false;
-                }
-            });
-            return valid;
-        }
-
-        //if all questions are answered
-        if (formValidate()) {
-            //storing user data
-            let userData = {
-                name: $("#name").val(),
-                photo: $("#photo").val(),
-                score: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val(),
-                ]
-            };
-
-            //shows data from friends api
-            $.post("/api/friends", userData, function (data) {
-                $("#match-name").text(data.name);
-                $("#match-img").attr("src", data.photo);
-
-                //showing modal
-                $("#results-modal").modal("toggle");
-            });
-        } else {
-            alert("Please fill out all the questions for continuing!");
-        }
-    });
-//</script>
 
 </html>
