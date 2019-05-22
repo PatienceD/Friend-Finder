@@ -4,12 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Friend Finder</title>
-    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-
 </head>
 
 <body>
@@ -152,8 +149,7 @@
                     </div>
                     <div class="modal-body">
                         <h2 id="match-name"></h2>
-                        <img id="match-img"
-                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                        <img id="match-img">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -169,11 +165,64 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript">
+        //capture on clicks
+        $("#submit-button").on("click", function (event) {
+            event.preventDefault();
+
+            console.log("clicked")
+            //validating form
+            function formValidate() {
+                let valid = true;
+                $(".form-input").each(function () {
+                    if ($(this).val() === " ") {
+                        valid = false;
+                    }
+                });
+                $(".question-choice").each(function () {
+                    if ($(this).val() === " ") {
+                        valid = false;
+                    }
+                });
+                return valid;
+            }
+
+            //if all questions are answered
+            if (formValidate()) {
+                //storing user data
+                let userData = {
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    score: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val(),
+                    ]
+                };
+
+                //shows data from friends api
+                $.post("/api/friends", userData, function (data) {
+                    $("#match-name").text(data.name);
+                    $("#match-img").attr("src", data.photo);
+
+                    //showing modal
+                    $("#results-modal").modal("toggle");
+                });
+            } else {
+                alert("Please fill out all the questions for continuing!");
+            }
+        });</script>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <script src="./servey_js.js"></script>
 
 </body>
 
