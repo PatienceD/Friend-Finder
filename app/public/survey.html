@@ -15,11 +15,11 @@
         <hr class="my-4">
         <div class="form-group">
             <h3>About You</h3>
-            <label for="exampleFormControlInput1">Name (required)</label>
+            <label for="exampleFormControlInput1">Name (required)</label><br>
             <input type="text" class="form-input" id="name" placeholder="John Smith">
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">Link to photo image (required)</label>
+            <label for="exampleFormControlInput1">Link to photo image (required)</label><br>
             <input type="text" class="form-input" id="photo" placeholder="URL to your photo">
         </div>
         <hr class="my-4">
@@ -30,8 +30,9 @@
         <form>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">#1 I feel sympathy for those who are worse off than
-                    myself.</label>
+                    myself.</label><br>
                 <select class="question-choice" id="q1">
+                    <option>Please Select an Asnwer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -42,8 +43,9 @@
 
             <div class="form-group">
                 <label for="exampleFormControlSelect1">#2 I see beauty in things that others might not
-                    notice.</label>
+                    notice.</label><br>
                 <select class="question-choice" id="q2">
+                    <option>Please Select an Asnwer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -52,8 +54,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">#3 I love to help others.</label>
+                <label for="exampleFormControlSelect1">#3 I love to help others.</label><br>
                 <select class="question-choice" id="q3">
+                    <option>Please Select an Asnwer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -62,8 +65,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">#4 I want everything to be "just right."</label>
+                <label for="exampleFormControlSelect1">#4 I want everything to be "just right."</label><br>
                 <select class="question-choice" id="q4">
+                    <option>Please Select an Asnwer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -72,8 +76,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">#5 I believe in the importance of art.</label>
+                <label for="exampleFormControlSelect1">#5 I believe in the importance of art.</label><br>
                 <select class="question-choice" id="q5">
+                    <option>Please Select an Asnwer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -82,8 +87,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">#6 I experience my emotions intensely.</label>
+                <label for="exampleFormControlSelect1">#6 I experience my emotions intensely.</label><br>
                 <select class="question-choice" id="q6">
+                    <option>Please Select an Asnwer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -92,8 +98,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">#7 I like to solve complex problems.</label>
+                <label for="exampleFormControlSelect1">#7 I like to solve complex problems.</label><br>
                 <select class="question-choice" id="q7">
+                    <option>Please Select an Asnwer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -103,8 +110,9 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">#8 I talk to a lot of different people at
-                    parties.</label>
+                    parties.</label><br>
                 <select class="question-choice" id="q8">
+                    <option>Please Select an Asnwer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -114,8 +122,9 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">#9 I believe that there is no absolute right and
-                    wrong.</label>
+                    wrong.</label><br>
                 <select class="question-choice" id="q9">
+                    <option>Please Select an Asnwer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -124,8 +133,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">#10 I believe that others have good intentions.</label>
+                <label for="exampleFormControlSelect1">#10 I believe that others have good intentions.</label><br>
                 <select class="question-choice" id="q10">
+                    <option>Please Select an Asnwer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -173,14 +183,15 @@
             console.log("clicked");
             //validating form
             function formValidate() {
+                debugger;
                 let valid = true;
                 $(".form-input").each(function () {
-                    if ($(this).val() === " ") {
+                    if ($(this).val() === "John Smith" || "URL to your photo") {
                         valid = false;
                     }
                 });
                 $(".question-choice").each(function () {
-                    if ($(this).val() === " ") {
+                    if ($(this).val() === "Please Select an Answer") {
                         valid = false;
                     }
                 });
@@ -219,9 +230,8 @@
                 alert("Please fill out all the questions for continuing!");
             }
         }); 
-        </script>
+    </script>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 

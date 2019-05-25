@@ -7,7 +7,8 @@ module.exports = function (app) {
 
     app.post("/api/friends", function (req, res) {
 
-        let results = req.body.scores;
+        debugger;
+        let results = req.body;
         for (let i = 0; i < results.length; i++) {
             results[i] = parseInt(results[i]);
         }
