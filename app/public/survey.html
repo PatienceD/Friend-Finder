@@ -32,7 +32,7 @@
                 <label for="exampleFormControlSelect1">#1 I feel sympathy for those who are worse off than
                     myself.</label><br>
                 <select class="question-choice" id="q1">
-                    <option>Please Select an Asnwer</option>
+                    <option>Please Select an Answer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -45,7 +45,7 @@
                 <label for="exampleFormControlSelect1">#2 I see beauty in things that others might not
                     notice.</label><br>
                 <select class="question-choice" id="q2">
-                    <option>Please Select an Asnwer</option>
+                    <option>Please Select an Answer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -56,7 +56,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">#3 I love to help others.</label><br>
                 <select class="question-choice" id="q3">
-                    <option>Please Select an Asnwer</option>
+                    <option>Please Select an Answer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -67,7 +67,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">#4 I want everything to be "just right."</label><br>
                 <select class="question-choice" id="q4">
-                    <option>Please Select an Asnwer</option>
+                    <option>Please Select an Answer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -78,7 +78,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">#5 I believe in the importance of art.</label><br>
                 <select class="question-choice" id="q5">
-                    <option>Please Select an Asnwer</option>
+                    <option>Please Select an Answer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -89,7 +89,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">#6 I experience my emotions intensely.</label><br>
                 <select class="question-choice" id="q6">
-                    <option>Please Select an Asnwer</option>
+                    <option>Please Select an Answer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -100,7 +100,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">#7 I like to solve complex problems.</label><br>
                 <select class="question-choice" id="q7">
-                    <option>Please Select an Asnwer</option>
+                    <option>Please Select an Answer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -112,7 +112,7 @@
                 <label for="exampleFormControlSelect1">#8 I talk to a lot of different people at
                     parties.</label><br>
                 <select class="question-choice" id="q8">
-                    <option>Please Select an Asnwer</option>
+                    <option>Please Select an Answer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -124,7 +124,7 @@
                 <label for="exampleFormControlSelect1">#9 I believe that there is no absolute right and
                     wrong.</label><br>
                 <select class="question-choice" id="q9">
-                    <option>Please Select an Asnwer</option>
+                    <option>Please Select an Answer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -135,7 +135,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">#10 I believe that others have good intentions.</label><br>
                 <select class="question-choice" id="q10">
-                    <option>Please Select an Asnwer</option>
+                    <option>Please Select an Answer</option>
                     <option>1 (strongly disagree)</option>
                     <option>2 (somewhat disagree)</option>
                     <option>3 (neutral)</option>
@@ -155,7 +155,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title"><strong>Best Match</strong></h2>
+                        <h2 class="modal-title" style="float: left"><strong>Best Match</strong></h2>
                     </div>
                     <div class="modal-body">
                         <h2 id="match-name"></h2>
@@ -169,7 +169,9 @@
             </div>
         </div>
         <div class="footer">
-            <a href="#">API Friends List</a> | <a href="#">GitHub Repo</a>
+            <a href="/api/friends" target="_blank">API Friends List</a> | <a
+                href="https://github.com/PatienceD/Friend-Finder" target="_blank">GitHub
+                Repo</a>
             <a class="btn btn-light btn-lg" href="./home" role="button" style="float: right"><i
                     class="fas fa-home"></i></a>
         </div>
@@ -183,10 +185,12 @@
             console.log("clicked");
             //validating form
             function formValidate() {
-                debugger;
                 let valid = true;
                 $(".form-input").each(function () {
-                    if ($(this).val() === "John Smith" || "URL to your photo") {
+                    if ($(this).val() === "John Smith") {
+                        valid = false;
+                    }
+                    else if ($(this).val() === "URL to your photo") {
                         valid = false;
                     }
                 });
@@ -204,7 +208,7 @@
                 let userData = {
                     name: $("#name").val(),
                     photo: $("#photo").val(),
-                    score: [
+                    scores: [
                         $("#q1").val(),
                         $("#q2").val(),
                         $("#q3").val(),
